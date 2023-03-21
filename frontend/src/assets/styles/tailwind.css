@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .p-page {
+    @apply px-[8vw] mobile:px-[3vw];
+  }
+  .pl-page {
+    @apply pl-[8vw] mobile:pl-[3vw];
+  }
+  .pr-page {
+    @apply pr-[8vw] mobile:pr-[3vw];
+  }
+
+  .text-gradient-to-r {
+    @apply text-transparent bg-clip-text bg-gradient-to-r;
+  }
+
+  .content-blank {
+    content: "";
+  }
+
+  .bg-radial-glow {
+    background: radial-gradient(
+      800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(255, 255, 255, 0.08),
+      transparent 40%
+    );
+  }
+}
+
+@layer components {
+  .btn-1 {
+    @apply bg-primary text-back hover:bg-secondary duration-300 w-max;
+  }
+
+  .btn-2 {
+    --border-size: 2px;
+    @apply relative flex items-center w-max box-border text-front bg-[#171717] bg-clip-padding rounded-xl hover:bg-back hover:after:opacity-100 duration-500;
+    border: solid var(--border-size) transparent;
+  }
+
+  .btn-2::before {
+    content: "";
+    @apply absolute top-0 left-0 bottom-0 right-0 -z-[1] -m-[var(--border-size)] bg-gradient-to-tr rounded-inherit from-primary to-secondary duration-inherit;
+  }
+
+  .btn-2::after {
+    content: "";
+    @apply absolute top-0 left-0 bottom-0 right-0 -z-[1] bg-gradient-to-tr from-primary to-secondary duration-inherit opacity-0 blur-md;
+  }
+
+  .btn-3 {
+    @apply bg-primary text-primary bg-opacity-10 w-max rounded-lg duration-500 hover:bg-opacity-100 hover:scale-105 hover:text-back;
+  }
+
+  .btn-4 {
+    @apply bg-tertiary text-back;
+  }
+}

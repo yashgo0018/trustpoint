@@ -1,0 +1,31 @@
+.scrollbar-primary::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.scrollbar-primary::-webkit-scrollbar-track {
+  @apply bg-front bg-opacity-20;
+}
+
+/* Handle */
+.scrollbar-primary::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+
+/* Handle on hover */
+.scrollbar-primary::-webkit-scrollbar-thumb:hover {
+  @apply bg-tertiary;
+}
+
+.placeholder {
+  animation: placeholder-anim 1000ms linear 0ms infinite alternate;
+}
+
+@keyframes placeholder-anim {
+  from {
+    background-color: #ffffff15;
+  }
+  to {
+    background-color: #ffffff44;
+  }
+}
